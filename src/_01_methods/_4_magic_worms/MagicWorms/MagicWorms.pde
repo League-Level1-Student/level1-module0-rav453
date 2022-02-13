@@ -9,7 +9,8 @@
 void setup() {
 
   //Set your canvas size
-
+  size(1000,1000);
+  background(#FFFFFF,#000000,#ADD8E6);
   //Set a background color  
 
 }
@@ -21,7 +22,10 @@ void draw() {
   // Use a for loop to draw 300 small ellipses in a diagonal line across the canvas.
   // Make them a bright color.
   // RUN THE PROGRAM TO CHECK IT (see the recipe for the expected outcome).
-
+  for (int i=0; i<300; i++){
+    ellipse(i*10, i*10, 100, 100);
+    fill(#006600);
+  }
   // STEP 2.
   // Now make each ellipse use random values for their x and y co-ordinates. Make sure they are inside the canvas. 
   // Hint:  random(int maxValue)
