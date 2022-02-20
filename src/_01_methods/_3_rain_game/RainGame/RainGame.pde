@@ -9,9 +9,9 @@
 
 int score = 0;
 int bucketWidth = 50;
-int bucketHeight;
+int bucketHeight = 70;
 PImage bucket;
-int y;
+int y = 10;
 int x;
 
 // The setup method is run once when the program starts
@@ -28,36 +28,38 @@ void setup() {
 // The draw method runs continuously (in a loop) until the program ends
 void draw() {
   // Set a background color
-  background(#FFFFFF,#006600,#ADD8E6);
+  background(#FFFFFF);
   
   // Draw a raindrop (ellipse) at the top of the screen
-  fill(#FFFFFF,#006600,#ADD8E6);
-  stroke(#FFFFFF,#006600,#ADD8E6);
-  ellipse(100, 100, 50, 75);
+  fill(#3C4BA5);
+  ellipse(x, y, 50, 75);
   
   // Make the rain fall down the screen.
   // Hint: make a variable for the raindrop's Y position and change it after you
   // draw the raindrop
-  y = 10;
+  y += 3;
   
   // When the rain falls off the bottom of the canvas, 
   // start a new rain drop falling from the top.
   // Each new drop should start at a random position (X position) at the top. 
   // Hint: This code will give you a random number between 0 and the width of your sketch.
-  int randomNumber = (int) random(width);
-  
+  if (y > height){
+    int randomNumber = (int) random(width);
+    y = 0;
+    x = randomNumber;
+    checkCatch(x);
+  }
   
   // Draw a bucket (rectangle or image) at the bottom of the screen. 
   // The bucket's width needs to be stored in the bucketWidth variable.
-  
+  rect(mouseX, 1000, 50, 70); 
   
   // Make the bucket move side-to-side with the mouse. Hint: use mouseX
   
   
   // When the rain drop has fallen to the bucket, call the checkCatch method
-  //  to see if the rain drop is in the bucket.
+  //  to see if the rain drop is in the bucket
   
- 
  //This code will display the score on the screen. 
  // Change the color if it does not show up on your background.
     fill(0, 0, 0);
