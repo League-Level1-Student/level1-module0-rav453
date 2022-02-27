@@ -8,7 +8,7 @@
 
 
 int score = 0;
-int bucketWidth = 50;
+int bucketWidth = 90;
 int bucketHeight = 70;
 PImage bucket;
 int y = 10;
@@ -18,7 +18,7 @@ int x;
 void setup() {
 
   //Set your canvas size
-  size(1000,1000);
+  size(1000,650);
   
   //If you are using an image for the bucket, load it and resize it here.
   // A bucket image -  bucket.png - has been provided if you want to use it.
@@ -43,16 +43,17 @@ void draw() {
   // start a new rain drop falling from the top.
   // Each new drop should start at a random position (X position) at the top. 
   // Hint: This code will give you a random number between 0 and the width of your sketch.
-  if (y > height){
+  if (y > height-10){
+    checkCatch(x);
     int randomNumber = (int) random(width);
     y = 0;
     x = randomNumber;
-    checkCatch(x);
+    
   }
   
   // Draw a bucket (rectangle or image) at the bottom of the screen. 
   // The bucket's width needs to be stored in the bucketWidth variable.
-  rect(mouseX, 1000, 50, 70); 
+  rect(mouseX-22.5, 600, 90, 70); 
   
   // Make the bucket move side-to-side with the mouse. Hint: use mouseX
   
