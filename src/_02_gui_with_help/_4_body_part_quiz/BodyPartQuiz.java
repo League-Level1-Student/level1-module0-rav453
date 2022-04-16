@@ -56,12 +56,15 @@ public class BodyPartQuiz {
 		
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
-
+		
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-		if( guess == ("arnold")) {
+		if(guess.equals("arnold")) {
 			System.out.println("correct");
 			score++;
+		}
+		else {
+			System.out.println("incorrect");
 		}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
