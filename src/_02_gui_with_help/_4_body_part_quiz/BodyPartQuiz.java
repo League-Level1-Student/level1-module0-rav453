@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String firstImage = "src/_02_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "src/_02_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "src/_02_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "src/_02_gui_with_help/_4_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(400, 400);
+		window.setSize(150,150);
 
 		showNextImage();
 
@@ -73,7 +73,36 @@ public class BodyPartQuiz {
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
-
+		String guessl = JOptionPane.showInputDialog("who is this?");
+		if(guessl.equals("leonardo")) {
+			System.out.println("correct");
+			score++;
+		}
+		else {
+			System.out.println("incorrect");
+		}
+		
+		showNextImage();
+		String guessm = JOptionPane.showInputDialog("who is this?");
+		if(guessm.equals("morgan")) {
+			System.out.println("correct");
+			score++;
+		}
+		else {
+			System.out.println("incorrect");
+		}
+		
+		showNextImage();
+		String guessj = JOptionPane.showInputDialog("who is this?");
+		if(guessj.equals("jack")) {
+			System.out.println("correct");
+			score++;
+		}
+		else {
+			System.out.println("incorrect");
+		}
+		System.out.println("your score is " + score);
+		
 		// 9. Show them their current score
 
 	}
